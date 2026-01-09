@@ -135,7 +135,9 @@ The `/wt` skill implements a solo development workflow using git worktrees:
 /wt status  # Show worktree state
 ```
 
-See `skills/wt/SKILL.md` for full documentation.
+**Documentation:**
+- [docs/git_workflow.md](docs/git_workflow.md) - Full workflow guide with examples
+- [skills/wt/SKILL.md](skills/wt/SKILL.md) - Skill implementation details
 
 ## What's Not Tracked
 
