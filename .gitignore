@@ -32,3 +32,4 @@ plans/
 
 # Marketplace plugins (downloaded separately)
 plugins/marketplaces/
+plugins/known_marketplaces.json
