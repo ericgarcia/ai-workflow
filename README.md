@@ -73,6 +73,32 @@ bindkey '^[[Z' autosuggest-accept  # Shift+Tab to accept
 
 **Key bindings:** `Ctrl+R` (fuzzy history), `→` or `Shift+Tab` (accept suggestion)
 
+### Post-Compaction CLAUDE.md Refresh
+
+**Problem:** When Claude Code runs `/compact` to summarize and reduce context, it does not automatically re-read `CLAUDE.md` files afterward. This means your custom instructions may be lost from context after compaction.
+
+**Solution:** A `SessionStart` hook that triggers on compaction and injects the CLAUDE.md contents back into context.
+
+This is configured in `settings.json`:
+```json
+{
+  "hooks": {
+    "SessionStart": [{
+      "matcher": "compact",
+      "hooks": [{
+        "type": "command",
+        "command": "echo '=== ~/.claude/CLAUDE.md ===' && cat ~/.claude/CLAUDE.md && echo '' && echo '=== Project CLAUDE.md ===' && cat CLAUDE.md 2>/dev/null || echo 'No project CLAUDE.md found'"
+      }]
+    }]
+  }
+}
+```
+
+The hook:
+- Triggers when a session starts with "compact" in the context (i.e., after `/compact`)
+- Outputs both `~/.claude/CLAUDE.md` (global) and project-level `CLAUDE.md`
+- Gracefully handles missing project CLAUDE.md files
+
 - MCP servers (install as needed):
   ```bash
   # Time server (configured in settings.json)
