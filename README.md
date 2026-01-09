@@ -33,6 +33,46 @@ See [SuperClaude installation docs](https://github.com/SuperClaude-Org/SuperClau
 ### Optional (for specific features)
 
 - [VS Code](https://code.visualstudio.com/) - For `/bg-run` skill (opens output in editor)
+
+### Smart Shell Autocompletions (Recommended)
+
+Warp-like autocompletions for any terminal (including VS Code integrated terminal):
+
+```bash
+# Install fzf
+brew install fzf
+
+# Install zsh plugins (Oh My Zsh required)
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-completions
+```
+
+Add to `~/.zshrc` (before `source $ZSH/oh-my-zsh.sh`):
+```bash
+fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
+
+plugins=(
+  git
+  zsh-autosuggestions
+  zsh-completions
+  zsh-syntax-highlighting  # must be last
+)
+```
+
+Add to end of `~/.zshrc`:
+```bash
+# fzf integration
+source <(fzf --zsh)
+
+# Autosuggestions config
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#666666"
+ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+bindkey '^[[Z' autosuggest-accept  # Shift+Tab to accept
+```
+
+**Key bindings:** `Ctrl+R` (fuzzy history), `→` or `Shift+Tab` (accept suggestion)
+
 - MCP servers (install as needed):
   ```bash
   # Time server (configured in settings.json)
