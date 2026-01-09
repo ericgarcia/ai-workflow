@@ -1,0 +1,34 @@
+# State and history (personal/session-specific)
+history.jsonl
+settings.local.json
+stats-cache.json
+.superclaude-metadata.json
+.update_check
+superclaude_env_vars.json
+
+# Cache and temporary files
+cache/
+debug/
+file-history/
+ide/
+logs/
+paste-cache/
+session-env/
+shell-snapshots/
+statsig/
+telemetry/
+todos/
+backups/
+
+# Project-specific (contains local paths)
+projects/
+
+# Plans (project-specific, auto-generated names)
+plans/
+
+# Plugins (can be large, downloaded from marketplace)
+# Uncomment if you prefer to re-download:
+# plugins/
+
+# Marketplace plugins (downloaded separately)
+plugins/marketplaces/
