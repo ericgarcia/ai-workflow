@@ -34,6 +34,27 @@ find . -name "*report.html" -type f -newermt "5 minutes ago"
 ```
 
 # ═══════════════════════════════════════════════════
+# Custom Skills
+# ═══════════════════════════════════════════════════
+
+## /wt - Git Worktree Workflow
+Manage parallel development with worktrees using three verbs: **sync**, **land**, **ship**.
+
+| Command | Purpose |
+|---------|---------|
+| `/wt sync` | Rebase worktree onto latest base branch |
+| `/wt land` | Land commits from worktree to base branch |
+| `/wt ship` | Fast-forward merge base to main |
+| `/wt status` | Show worktree state and commits ahead/behind |
+
+**Naming conventions:**
+- Branch: `{base}-wt-N` (e.g., `develop-wt-1` → base is `develop`)
+- Directory: `{project-folder}-wt-N` (e.g., `my-project-wt-1`)
+
+## /bg-run - Background Tasks
+Run long-duration commands with immediate VS Code output viewing. Use for training, builds, tests >30s.
+
+# ═══════════════════════════════════════════════════
 # SuperClaude Framework Components
 # ═══════════════════════════════════════════════════
 
