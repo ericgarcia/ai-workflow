@@ -2,6 +2,29 @@
 
 Personal Claude Code configuration, skills, and workflow customizations.
 
+## Prerequisites
+
+### Required
+
+- [Claude Code](https://claude.ai/claude-code) - Anthropic's CLI for Claude
+- [uv](https://docs.astral.sh/uv/) - Fast Python package manager (for MCP servers)
+  ```bash
+  curl -LsSf https://astral.sh/uv/install.sh | sh
+  ```
+
+### Optional (for specific features)
+
+- [VS Code](https://code.visualstudio.com/) - For `/bg-run` skill (opens output in editor)
+- MCP servers (install as needed):
+  ```bash
+  # Time server (configured in settings.json)
+  uvx mcp-server-time
+
+  # Other MCP servers referenced in MCP_*.md docs:
+  # Context7, Magic, Morphllm, Playwright, Sequential, Serena
+  # See each MCP_*.md file for installation instructions
+  ```
+
 ## Installation
 
 Clone directly to `~/.claude`:
