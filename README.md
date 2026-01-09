@@ -12,6 +12,24 @@ Personal Claude Code configuration, skills, and workflow customizations.
   curl -LsSf https://astral.sh/uv/install.sh | sh
   ```
 
+### SuperClaude Framework
+
+This config builds on [SuperClaude](https://github.com/SuperClaude-Org/SuperClaude_Framework), a framework that enhances Claude Code with specialized commands, agents, and workflows.
+
+**Install:**
+```bash
+pipx install superclaude
+superclaude install
+```
+
+**Update:**
+```bash
+pipx upgrade superclaude
+superclaude install --upgrade
+```
+
+See [SuperClaude installation docs](https://github.com/SuperClaude-Org/SuperClaude_Framework/blob/master/docs/getting-started/installation.md) for more options.
+
 ### Optional (for specific features)
 
 - [VS Code](https://code.visualstudio.com/) - For `/bg-run` skill (opens output in editor)
