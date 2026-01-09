@@ -18,7 +18,7 @@ Manage git worktrees with three simple verbs: **sync**, **land**, **ship**.
 
 Detect `{base}` from current branch name by stripping `-wt-N` suffix:
 - `feature-auth-wt-1` → `{base}` = `feature-auth`
-- `develop-ericg-wt-2` → `{base}` = `develop-ericg`
+- `develop-wt-2` → `{base}` = `develop`
 
 Use this command to detect:
 ```bash

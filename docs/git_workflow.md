@@ -5,7 +5,7 @@ Solo development workflow using multiple worktrees (e.g., parallel Claude Code s
 ## Naming Convention
 
 **Integration branch** (`{base}`) - Your linear development branch:
-- `develop-ericg` - Personal development branch
+- `develop` - Personal development branch
 - `feature-auth` - Feature branch for a specific initiative
 - `experiment-v3` - Experimental work
 
@@ -13,7 +13,7 @@ Solo development workflow using multiple worktrees (e.g., parallel Claude Code s
 - `{project}-wt-N` format (e.g., `{repo}-wt-1`, `{repo}-wt-2`)
 
 **Worktree branches** - Named after the base branch they target:
-- `{base}-wt-N` format (e.g., `feature-auth-wt-1`, `develop-ericg-wt-2`)
+- `{base}-wt-N` format (e.g., `feature-auth-wt-1`, `develop-wt-2`)
 
 ## Directory Structure
 
